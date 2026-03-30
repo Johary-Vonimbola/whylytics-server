@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.whylytics.model;
 
 import java.sql.Date;
 import java.util.Set;
