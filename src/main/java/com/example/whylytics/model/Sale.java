@@ -33,6 +33,16 @@ public class Sale {
     @Column(name="total")
     Double total;
 
-    @OneToMany(mappedBy="parent", cascade=CascadeType.ALL, fetch=FetchType.EAGER, orphanRemoval=true)
+    @OneToMany(mappedBy="parent", cascade=CascadeType.ALL, fetch=FetchType.LAZY, orphanRemoval=true)
     Set<SaleDetail> saleDetails;
+
+    public void removeDetail(SaleDetail detail){
+        this.saleDetails.remove(detail);
+        detail.setParent(null);
+    }
+
+    public void addDetail(SaleDetail detail){
+        this.saleDetails.add(detail);
+        detail.setParent(this);
+    }
 }
