@@ -1,6 +1,6 @@
 package com.example.whylytics.model;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
@@ -29,7 +29,7 @@ public class Sale {
     @Column(name="id")
     Integer id;
     @Column(name="date")
-    Date date;
+    LocalDateTime date;
     @Column(name="total")
     Double total;
 
