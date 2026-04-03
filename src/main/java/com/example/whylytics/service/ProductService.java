@@ -26,7 +26,7 @@ public class ProductService {
         return this.productRepository.save(product);
     }
     
-    public void delete(Integer id){
+    public void delete(Integer id) throws Exception{
         if (!productRepository.existsById(id)) {
             throw new RuntimeException("Product not found");
         }
