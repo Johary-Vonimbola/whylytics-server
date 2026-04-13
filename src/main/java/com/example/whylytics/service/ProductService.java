@@ -33,4 +33,7 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
+    public String getTopProductThisMonth(){
+        return this.productRepository.findTopProductThisMonth();
+    }
 }
